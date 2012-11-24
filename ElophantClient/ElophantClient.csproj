@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5AB8F67-7BBC-48DF-9A1D-8D0D3DE685DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ElophantClient</RootNamespace>
+    <AssemblyName>ElophantClient</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Testing|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Testing\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TESTING</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LoLNotes.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ElophantClientIcon64x64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime, Version=2.7.6.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\Dependencies\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\Dependencies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Reflection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\Dependencies\db4o\Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\DescriptionEnumTypeConverter.cs" />
+    <Compile Include="Assets\GameModes.cs" />
+    <Compile Include="Assets\GameTypes.cs" />
+    <Compile Include="Assets\SpellIcons.cs" />
+    <Compile Include="Assets\StatsData.cs" />
+    <Compile Include="Extensions\TableLayoutPanelExt.cs" />
+    <Compile Include="Flash\BaseList.cs" />
+    <Compile Include="Gui\CertificateHolder.cs" />
+    <Compile Include="Gui\MainSettings.cs" />
+    <Compile Include="Gui\PlayerCache.cs" />
+    <Compile Include="Gui\LeagueRegion.cs" />
+    <Compile Include="Messages\Account\AccountSummary.cs" />
+    <Compile Include="Messages\Account\AllSummonerData.cs" />
+    <Compile Include="Messages\Account\LoginDataPacket.cs" />
+    <Compile Include="Messages\Account\Session.cs" />
+    <Compile Include="Messages\Account\SummonerData.cs" />
+    <Compile Include="Messages\Broadcast\BroadcastMessage.cs" />
+    <Compile Include="Messages\Champion\ChampionDTO.cs" />
+    <Compile Include="Messages\Champion\ChampionSkinDTO.cs" />
+    <Compile Include="Messages\Champion\ChampionSkinDTOList.cs" />
+    <Compile Include="Messages\Commands\PlayerCommands.cs" />
+    <Compile Include="Messages\GameLobby\BannedChampion.cs" />
+    <Compile Include="Messages\GameLobby\BannedChampionList.cs" />
+    <Compile Include="Messages\Game\GameMapEnabledDTO.cs" />
+    <Compile Include="Messages\Game\QueueThrottleDTO.cs" />
+    <Compile Include="Messages\Statistics\AggregatedStat.cs" />
+    <Compile Include="Messages\Statistics\AggregatedStatList.cs" />
+    <Compile Include="Messages\Statistics\ChampionStatInfo.cs" />
+    <Compile Include="Messages\Statistics\ChampionStatInfoList.cs" />
+    <Compile Include="Messages\Statistics\FellowPlayerInfo.cs" />
+    <Compile Include="Messages\Statistics\FellowPlayerInfoList.cs" />
+    <Compile Include="Messages\Statistics\PlayerGameStatsList.cs" />
+    <Compile Include="Messages\Statistics\PlayerGameStats.cs" />
+    <Compile Include="Messages\Statistics\PlayerLifetimeStats.cs" />
+    <Compile Include="Messages\Statistics\PlayerStatSummaries.cs" />
+    <Compile Include="Messages\Statistics\PlayerStatSummary.cs" />
+    <Compile Include="Messages\Statistics\PlayerStatSummaryList.cs" />
+    <Compile Include="Messages\Statistics\RawStat.cs" />
+    <Compile Include="Messages\Statistics\RawStatList.cs" />
+    <Compile Include="Messages\Statistics\RecentGames.cs" />
+    <Compile Include="Messages\Summoner\PublicSummoner.cs" />
+    <Compile Include="Messages\Summoner\SlotEntry.cs" />
+    <Compile Include="Messages\Summoner\SlotEntryList.cs" />
+    <Compile Include="Messages\Summoner\SpellBookPage.cs" />
+    <Compile Include="Messaging\Messages\AbstractMessage.cs" />
+    <Compile Include="Messaging\Messages\AcknowledgeMessage.cs" />
+    <Compile Include="Flash\LogReader.cs" />
+    <Compile Include="Messages\GameStats\EndOfGameStats.cs" />
+    <Compile Include="Messages\GameStats\GameItems.cs" />
+    <Compile Include="Messaging\Messages\AsyncMessage.cs" />
+    <Compile Include="Messaging\Messages\BroadcastNotification.cs" />
+    <Compile Include="Messaging\Messages\ClientSystemStatesNotification.cs" />
+    <Compile Include="Messaging\Messages\CommandMessage.cs" />
+    <Compile Include="Messaging\Messages\DSA.cs" />
+    <Compile Include="Messaging\Messages\DSC.cs" />
+    <Compile Include="Messaging\Messages\DSK.cs" />
+    <Compile Include="Messaging\IMessageProcessor.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Util\CertificateInstaller.cs" />
+    <Compile Include="Proxy\CallResultWait.cs" />
+    <Compile Include="Proxy\IProxyHost.cs" />
+    <Compile Include="Proxy\ProxyClient.cs" />
+    <Compile Include="Proxy\ProxyHost.cs" />
+    <Compile Include="Proxy\RtmpsProxyClient.cs" />
+    <Compile Include="Proxy\RtmpsProxyHost.cs" />
+    <Compile Include="Proxy\SecureProxyHost.cs" />
+    <Compile Include="Storage\DbExporter.cs" />
+    <Compile Include="Storage\PlayerEntry.cs" />
+    <Compile Include="Messages\GameStats\PlayerStats\PlayerStatsSummary.cs" />
+    <Compile Include="Messages\GameStats\PlayerStats\PlayerStatsSummaryList.cs" />
+    <Compile Include="Messages\GameStats\PlayerStats\PlayerStat.cs" />
+    <Compile Include="Messages\GameStats\PlayerStats\PlayerStatCategory.cs" />
+    <Compile Include="Messages\GameStats\PlayerStats\PlayerStatList.cs" />
+    <Compile Include="Flash\FlashObject.cs" />
+    <Compile Include="Messages\GameLobby\Participants\BotParticipant.cs" />
+    <Compile Include="Messages\GameLobby\GameDTO.cs" />
+    <Compile Include="Messages\GameLobby\Participants\GameParticipant.cs" />
+    <Compile Include="Messages\GameLobby\Participants\ObfuscatedParticipant.cs" />
+    <Compile Include="Messages\GameLobby\Participants\Participant.cs" />
+    <Compile Include="Flash\IFlashProcessor.cs" />
+    <Compile Include="Flash\InternalNameAttribute.cs" />
+    <Compile Include="Storage\StatsEntry.cs" />
+    <Compile Include="Assets\ItemData.cs" />
+    <Compile Include="Flash\PipeProcessor.cs" />
+    <Compile Include="Gui\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\GameLobby\Participants\PlayerParticipant.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\GameStorage.cs" />
+    <Compile Include="Flash\BaseObject.cs" />
+    <Compile Include="Messages\MessageObject.cs" />
+    <Compile Include="Messages\Translators\IObjectTranslator.cs" />
+    <Compile Include="Messages\Translators\MessageTranslator.cs" />
+    <Compile Include="Messages\MessageAttribute.cs" />
+    <Compile Include="Messages\Readers\MessageReader.cs" />
+    <Compile Include="Util\AssemblyAttributes.cs" />
+    <Compile Include="Util\Compression.cs" />
+    <Compile Include="Util\ProcessInjector.cs" />
+    <Compile Include="Util\ProcessMemory.cs" />
+    <Compile Include="Util\ProcessMonitor.cs" />
+    <Compile Include="Util\SimpleLogTimer.cs" />
+    <Compile Include="Util\SuspendLayout.cs" />
+    <Compile Include="Util\Parse.cs" />
+    <Compile Include="Flash\FlashSerializer.cs" />
+    <Compile Include="Messages\GameLobby\TeamParticipants.cs" />
+    <Compile Include="Messages\Readers\IObjectReader.cs" />
+    <Compile Include="Util\AppInit.cs" />
+    <Compile Include="Util\RtmpUtil.cs" />
+    <Compile Include="Util\Wow.cs" />
+    <EmbeddedResource Include="Gui\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemData.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\ChampIcons\Ahri_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Akali_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Alistar_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Amumu_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Anivia_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Annie_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Ashe_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Blitzcrank_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Brand_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Caitlyn_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Cassiopeia_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Chogath_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Corki_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Darius_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Diana_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Draven_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\DrMundo_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Evelynn_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Ezreal_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Fiddlesticks_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Fiora_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Fizz_square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Galio_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Gangplank_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Garen_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Gragas_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Graves_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Hecarim_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Heimerdinger_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Irelia_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Janna_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\JarvanIV_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Jax_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Jayce_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Karma_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Karthus_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Kassadin_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Katarina_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Kayle_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Kennen_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\KogMaw_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Leblanc_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\LeeSin_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Leona_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Lulu_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Lux_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Malphite_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Malzahar_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Maokai_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\MasterYi_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\MissFortune_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\MonkeyKing_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Mordekaiser_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Morgana_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Nasus_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Nautilus_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Nidalee_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Nocturne_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Nunu_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Olaf_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Orianna_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Pantheon_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Poppy_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Rammus_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Renekton_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Rengar_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Riven_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Rumble_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Ryze_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Sejuani_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Shaco_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Shen_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Shyvana_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Singed_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Sion_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Sivir_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Skarner_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Sona_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Soraka_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Swain_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Talon_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Taric_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Teemo_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Tristana_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Trundle_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Tryndamere_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\TwistedFate_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Twitch_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Udyr_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Urgot_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Varus_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Vayne_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Veigar_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Viktor_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Vladimir_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Volibear_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Warwick_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Xerath_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\XinZhao_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Yorick_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Ziggs_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Zilean_Square_0.png" />
+    <Content Include="Content\Images\ChampIcons\Zyra_Square_0.png" />
+    <Content Include="Content\Images\SpellIcons\1.png" />
+    <Content Include="Content\Images\SpellIcons\10.png" />
+    <Content Include="Content\Images\SpellIcons\11.png" />
+    <Content Include="Content\Images\SpellIcons\12.png" />
+    <Content Include="Content\Images\SpellIcons\13.png" />
+    <Content Include="Content\Images\SpellIcons\14.png" />
+    <Content Include="Content\Images\SpellIcons\16.png" />
+    <Content Include="Content\Images\SpellIcons\17.png" />
+    <Content Include="Content\Images\SpellIcons\2.png" />
+    <Content Include="Content\Images\SpellIcons\20.png" />
+    <Content Include="Content\Images\SpellIcons\3.png" />
+    <Content Include="Content\Images\SpellIcons\4.png" />
+    <Content Include="Content\Images\SpellIcons\5.png" />
+    <Content Include="Content\Images\SpellIcons\6.png" />
+    <Content Include="Content\Images\SpellIcons\7.png" />
+    <Content Include="Content\Images\SpellIcons\9.png" />
+    <Content Include="Content\Images\unknown.png" />
+    <Content Include="ElophantClientIcon32x32.ico" />
+    <None Include="Resources\301.gif" />
+    <None Include="Resources\159.gif" />
+    <Content Include="ElophantClientIcon64x64.ico" />
+    <Content Include="Resources\ChampData.txt" />
+    <None Include="Resources\noise.png" />
+    <None Include="Resources\E-Huge.png" />
+    <None Include="Resources\prod.br.lol.riotgames.com.p12" />
+    <None Include="Resources\prod.eu.lol.riotgames.com.p12" />
+    <None Include="Resources\prod.eun1.lol.riotgames.com.p12" />
+    <None Include="Resources\prod.na1.lol.riotgames.com.p12" />
+    <None Include="Resources\StatsData.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FluorineFx\FluorineFx-3.5.csproj">
+      <Project>{A9B8375B-579D-4F8A-B00C-F2828DB58F3A}</Project>
+      <Name>FluorineFx-3.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NotMissing\NotMissing\NotMissing.csproj">
+      <Project>{85D59D64-9158-42F7-BBBA-23F14E9F3E2A}</Project>
+      <Name>NotMissing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gui\Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+<Target Name="AfterBuild">
+</Target>
+
+  -->
+</Project>
